@@ -2,7 +2,6 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package _BluePlate
  * @since _BluePlate 1.0
@@ -41,17 +40,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="main" class="wrapper">
 	<?php do_action( 'before' ); ?>
 	<header class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
-
 		<nav role="navigation" class="main-navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>'' ) ); ?>
+			
+			<h1><a class="site-logo" href="<?php echo bloginfo('url'); ?>"><?php bloginfo ('name'); ?></a></h1>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>'' ) ); ?>
+			
 		</nav><!-- .main-navigation -->
 	</header><!-- #masthead .site-header -->
-
-	<div id="main" class="site-main">

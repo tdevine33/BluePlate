@@ -1,27 +1,15 @@
 /*
 Theme Name: _BluePlate
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI: http://www.seanmichael.me
+Author: Sean Michael
+Author URI: http://www.seanmichael.me
+Description: A Starter Theme Created By Sean Michael
 Version: 1.0
-License: GNU General Public License
-License URI: license.txt
-Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Tags: Clean, Mean
 */
-
-
 /* =Reset
 -------------------------------------------------------------- */
-
+/* line 22, css/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,25 +18,30 @@ small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
+
+/* line 33, css/_reset.scss */
 html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll;
+  /* Keeps page centred in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
-	background: #fff;
-}
+
+/* line 49, css/_reset.scss */
 article,
 aside,
 details,
@@ -59,243 +52,352 @@ header,
 hgroup,
 nav,
 section {
-	display: block;
+  display: block;
 }
+
+/* line 52, css/_reset.scss */
 ol, ul {
-	list-style: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
+
+/* line 57, css/_reset.scss */
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
 }
+
+/* line 61, css/_reset.scss */
 caption, th, td {
-	font-weight: normal;
-	text-align: left;
+  font-weight: normal;
+  text-align: left;
 }
+
+/* line 66, css/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: "";
+  content: "";
 }
+
+/* line 69, css/_reset.scss */
 blockquote, q {
-	quotes: "" "";
+  quotes: "" "";
 }
+
+/* line 72, css/_reset.scss */
 a:focus {
-	outline: thin dotted;
+  outline: thin dotted;
 }
+
+/* line 76, css/_reset.scss */
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-	outline: 0;
+a:active {
+  /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+  outline: 0;
 }
+
+/* line 79, css/_reset.scss */
 a img {
-	border: 0;
+  border: 0;
 }
 
-
+/* =Fonts
+----------------------------------------------- */
 /* =Global
 ----------------------------------------------- */
-
+/* line 12, css/_global.scss */
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.5;
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
-	clear: both;
+/* line 21, css/_global.scss */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
 }
+
+/* line 24, css/_global.scss */
 hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* Links */
+/* line 32, css/_global.scss */
+a {
+  color: royalblue;
+}
+
+/* line 35, css/_global.scss */
+a:visited {
+  color: purple;
+}
+
+/* line 40, css/_global.scss */
+a:hover,
+a:focus,
+a:active {
+  color: midnightblue;
 }
 
 /* Text elements */
+/* line 45, css/_global.scss */
 p {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
-ul, ol {
-	margin: 0 0 1.5em 3em;
+
+/* line 48, css/_global.scss */
+p ul, p ol {
+  margin: 0 0 1.5em 3em;
 }
-ul {
-	list-style: disc;
+
+/* line 51, css/_global.scss */
+p ul {
+  list-style: disc;
 }
-ol {
-	list-style: decimal;
+
+/* line 54, css/_global.scss */
+p ol {
+  list-style: decimal;
 }
-ul ul, ol ol, ul ol, ol ul {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+
+/* line 57, css/_global.scss */
+p ul ul, p ol ol, p ul ol, p ol ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
+
+/* line 61, css/_global.scss */
 dt {
-	font-weight: bold;
+  font-weight: bold;
 }
+
+/* line 64, css/_global.scss */
 dd {
-	margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em;
 }
+
+/* line 67, css/_global.scss */
 b, strong {
-	font-weight: bold;
+  font-weight: bold;
 }
+
+/* line 70, css/_global.scss */
 dfn, cite, em, i {
-	font-style: italic;
+  font-style: italic;
 }
+
+/* line 73, css/_global.scss */
 blockquote {
-	margin: 0 1.5em;
+  margin: 0 1.5em;
 }
+
+/* line 76, css/_global.scss */
 address {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
+
+/* line 79, css/_global.scss */
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	padding: 1.6em;
-	overflow: auto;
-	max-width: 100%;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  overflow: auto;
+  max-width: 100%;
 }
+
+/* line 85, css/_global.scss */
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
+
+/* line 88, css/_global.scss */
 abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
+
+/* line 92, css/_global.scss */
 mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
+
+/* line 97, css/_global.scss */
 sup,
 sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
+
+/* line 104, css/_global.scss */
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
+
+/* line 107, css/_global.scss */
 sub {
-	top: .5ex;
+  top: .5ex;
 }
+
+/* line 110, css/_global.scss */
 small {
-	font-size: 75%;
+  font-size: 75%;
 }
+
+/* line 113, css/_global.scss */
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
+
+/* line 116, css/_global.scss */
 figure {
-	margin: 0;
+  margin: 0;
 }
+
+/* line 119, css/_global.scss */
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
+  margin: 0 0 1.5em;
+  width: 100%;
 }
+
+/* line 123, css/_global.scss */
 th {
-	font-weight: bold;
+  font-weight: bold;
 }
+
+/* line 129, css/_global.scss */
 button,
 input,
 select,
 textarea {
-	font-size: 100%; /* Corrects font size not being inherited in all browsers */
-	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
-	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
 }
+
+/* line 136, css/_global.scss */
 button,
 input {
-	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+  line-height: normal;
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+  *overflow: visible;
+  /* Corrects inner spacing displayed oddly in IE6/7 */
 }
+
+/* line 143, css/_global.scss */
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+  cursor: pointer;
+  /* Improves usability and consistency of cursor style between image-type 'input' and others */
+  -webkit-appearance: button;
+  /* Corrects inability to style clickable 'input' types in iOS */
 }
+
+/* line 149, css/_global.scss */
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
-	padding: 0; /* Addresses excess padding in IE8/9 */
+  box-sizing: border-box;
+  /* Addresses box sizing set to content-box in IE8/9 */
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
 }
+
+/* line 153, css/_global.scss */
 input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
-	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-	box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-	-webkit-appearance: none;
+
+/* line 159, css/_global.scss */
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
 }
+
+/* line 163, css/_global.scss */
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-	border: 0;
-	padding: 0;
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
 }
+
+/* line 169, css/_global.scss */
 input[type=text],
 input[type=email],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
+
+/* line 176, css/_global.scss */
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-	color: #111;
+  color: #111;
 }
+
+/* line 180, css/_global.scss */
 input[type=text],
 input[type=email] {
-	padding: 3px;
+  padding: 3px;
 }
+
+/* line 183, css/_global.scss */
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 98%;
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 98%;
 }
 
 /* Alignment */
+/* line 191, css/_global.scss */
 .alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
 }
+
+/* line 196, css/_global.scss */
 .alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
 }
+
+/* line 201, css/_global.scss */
 .aligncenter {
-	clear: both;
-	display: block;
-	margin: 0 auto;
+  clear: both;
+  display: block;
+  margin: 0 auto;
 }
-
-/* Links */
-a {
-	color: royalblue;
-}
-a:visited {
-	color: purple;
-}
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
-
-
-
