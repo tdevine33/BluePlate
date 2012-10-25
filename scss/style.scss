@@ -1,0 +1,20 @@
+/*!
+Theme Name: BluePlate Boiler Plate for WordPress
+Theme URI: 
+Description: A Starter Theme for WordPress by Sean Michael & forked by Terence Devine
+Version: 1.0
+Author: Terence Devine
+Author URI: http://terencedevine.com
+Tags: blank, starter, boilerplate
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+@import 'compass';
+@import 'bits';
+@import 'partials/normalize';
+@import 'grid';
+
+@import 'partials/wordpress';
+@import 'media-queries';
+@import 'retina';
+@import 'partials/print';
