@@ -14,6 +14,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import 'partials/normalize';
 @import 'grid';
 
+body{display:block;}
+
 @import 'partials/wordpress';
 @import 'media-queries';
 @import 'retina';
