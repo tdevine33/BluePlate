@@ -1,4 +1,4 @@
 BluePlate
 ==========
 
-A Starter WordPress Theme Created By Sean Michael & Forked by Terence Devine
+A Starter WordPress Theme Forked by Terence Devine
