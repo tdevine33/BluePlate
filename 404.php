@@ -1,37 +1,11 @@
-<?php
-/**
- * The template for displaying 404 pages (Not Found).
- *
- * @package _BluePlate
- * @since _BluePlate 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+		<article role="main" id="page-404">
+			<h3 class="page-title">Uh-Oh!</h3>
+			<p>The page you're looking for doesn't seem to exist!  Please try again.</p>
+			<?php include(TEMPLATEPATH.'/search-form.php'); ?>
+		</article>
 
-	get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-				<h2>Oops! That page can&rsquo;t be found.</h2>
-				</header><!-- .entry-header -->
-
-				<div class="entry-content">
-					<p><?php _e( 'That page can&rsquo;t be found.', '_blueplate' ); ?>
-					</br><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below.', '_blueplate' ); ?></p>
-
-
-					<?php the_widget( 'WP_Widget_Recent_Posts','', 'before_title=<h3 class="widgettitle">&after_title=</h3>'); ?>
-
-
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 .post .error404 .not-found -->
-
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
-
-<?php get_footer(); ?>
+	</div>
 
 <?php get_footer(); ?>

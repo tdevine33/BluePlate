@@ -1,0 +1,250 @@
+<?php
+/**
+ * Define our settings sections
+ *
+ * array key=$id, array value=$title in: add_settings_section( $id, $title, $callback, $page );
+ * @return array
+ */
+function toothdr_options_page_sections() {
+	
+	$sections = array();
+	// $sections[$id] 				= __($title, 'toothdr_textdomain');
+	$sections['callout_section'] 		= __('Default Callout', 'toothdr_textdomain');/*
+	$sections['txtarea_section'] 	= __('Textarea Form Fields', 'toothdr_textdomain');
+	$sections['select_section'] 	= __('Select Form Fields', 'toothdr_textdomain');
+	$sections['checkbox_section'] 	= __('Checkbox Form Fields', 'toothdr_textdomain');*/
+	
+	return $sections;	
+}
+
+/**
+ * Define our form fields (settings) 
+ *
+ * @return array
+ */
+function toothdr_options_page_fields() {
+
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_title",
+		"title"   => __( 'Callout Title', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text field for Callout Title. Some inline HTML (&lt;a&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;strong&gt;) is allowed.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => __('','toothdr_textdomain')
+	);
+	
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_body_text",
+		"title"   => __( 'Callout Body Text', 'toothdr_textdomain' ),
+		"desc"    => __( 'A textarea for a block of text. HTML tags allowed!', 'toothdr_textdomain' ),
+		"type"    => "textarea",
+		"std"     => __('Some default value','toothdr_textdomain')
+	);
+	
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_link",
+		"title"   => __( 'Link URL', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text field for the URL of "more info" link.  Use only for Informational Callouts', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "/services",
+		"class"   => "url"
+	);
+	
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_link_text",
+		"title"   => __( 'Link Title', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text field for the title of "more info" link text.  Use only for Informational Callouts', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => __('Some default value','toothdr_textdomain')
+	);
+	
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_select",
+		"title"   => __( 'Select Callout', 'toothdr_textdomain' ),
+		"desc"    => __( 'A select field to choose the type of callout, ie: Testmonial or Informational', 'toothdr_textdomain' ),
+		"type"    => "select2",
+		"std"    => "",
+		"choices" => array( __('Testimonials','toothdr_textdomain') . "|testi", __('Informational','toothdr_textdomain') . "|info")
+	);
+	
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_img",
+		"title"   => __( 'Image URL', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text field for the image URL.  Use only for Informational Callouts.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "http://tdr.propelled.com/wp-content/uploads/2012/06/braces-callout1.png",
+		"class"   => "url"
+	);
+
+	$options[] = array(
+		"section" => "callout_section",
+		"id"      => TOOTHDR_SHORTNAME . "_author",
+		"title"   => __( 'Testimonial Author', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text field for name / location of Testimonial Author.  Use only for Testimonials Callouts.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => __('Some default value','toothdr_textdomain')
+	);
+	
+	/*$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_nohtml_txt_input",
+		"title"   => __( 'No HTML!', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text input field where no html input is allowed.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => __('Some default value','toothdr_textdomain'),
+		"class"   => "nohtml"
+	);
+	
+	$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_numeric_txt_input",
+		"title"   => __( 'Numeric Input', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text input field where only numeric input is allowed.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "123",
+		"class"   => "numeric"
+	);
+	
+	$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_multinumeric_txt_input",
+		"title"   => __( 'Multinumeric Input', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text input field where only multible numeric input (i.e. comma separated numeric values) is allowed.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "123,234,345",
+		"class"   => "multinumeric"
+	);
+	
+	$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_url_txt_input",
+		"title"   => __( 'URL Input', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text input field which can be used for urls.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "http://wp.tutsplus.com",
+		"class"   => "url"
+	);
+	
+	$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_email_txt_input",
+		"title"   => __( 'Email Input', 'toothdr_textdomain' ),
+		"desc"    => __( 'A text input field which can be used for email input.', 'toothdr_textdomain' ),
+		"type"    => "text",
+		"std"     => "email@email.com",
+		"class"   => "email"
+	);
+	
+	$options[] = array(
+		"section" => "txt_section",
+		"id"      => TOOTHDR_SHORTNAME . "_multi_txt_input",
+		"title"   => __( 'Multi-Text Inputs', 'toothdr_textdomain' ),
+		"desc"    => __( 'A group of text input fields', 'toothdr_textdomain' ),
+		"type"    => "multi-text",
+		"choices" => array( __('Text input 1','toothdr_textdomain') . "|txt_input1", __('Text input 2','toothdr_textdomain') . "|txt_input2", __('Text input 3','toothdr_textdomain') . "|txt_input3", __('Text input 4','toothdr_textdomain') . "|txt_input4"),
+		"std"     => ""
+	);
+	
+	// Textarea Form Fields section
+	$options[] = array(
+		"section" => "txtarea_section",
+		"id"      => TOOTHDR_SHORTNAME . "_txtarea_input",
+		"title"   => __( 'Textarea - HTML OK!', 'toothdr_textdomain' ),
+		"desc"    => __( 'A textarea for a block of text. HTML tags allowed!', 'toothdr_textdomain' ),
+		"type"    => "textarea",
+		"std"     => __('Some default value','toothdr_textdomain')
+	);
+
+	$options[] = array(
+		"section" => "txtarea_section",
+		"id"      => TOOTHDR_SHORTNAME . "_nohtml_txtarea_input",
+		"title"   => __( 'No HTML!', 'toothdr_textdomain' ),
+		"desc"    => __( 'A textarea for a block of text. No HTML!', 'toothdr_textdomain' ),
+		"type"    => "textarea",
+		"std"     => __('Some default value','toothdr_textdomain'),
+		"class"   => "nohtml"
+	);
+	
+	$options[] = array(
+		"section" => "txtarea_section",
+		"id"      => TOOTHDR_SHORTNAME . "_allowlinebreaks_txtarea_input",
+		"title"   => __( 'No HTML! Line breaks OK!', 'toothdr_textdomain' ),
+		"desc"    => __( 'No HTML! Line breaks allowed!', 'toothdr_textdomain' ),
+		"type"    => "textarea",
+		"std"     => __('Some default value','toothdr_textdomain'),
+		"class"   => "allowlinebreaks"
+	);
+
+	$options[] = array(
+		"section" => "txtarea_section",
+		"id"      => TOOTHDR_SHORTNAME . "_inlinehtml_txtarea_input",
+		"title"   => __( 'Some Inline HTML ONLY!', 'toothdr_textdomain' ),
+		"desc"    => __( 'A textarea for a block of text. 
+		Only some inline HTML 
+		(&lt;a&gt;, &lt;b&gt;, &lt;em&gt;, &lt;strong&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;blockquote&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;del&gt;, &lt;q&gt;, &lt;strike&gt;) 
+		is allowed!', 'toothdr_textdomain' ),
+		"type"    => "textarea",
+		"std"     => __('Some default value','toothdr_textdomain'),
+		"class"   => "inlinehtml"
+	);	
+	
+	// Select Form Fields section
+	$options[] = array(
+		"section" => "select_section",
+		"id"      => TOOTHDR_SHORTNAME . "_select_input",
+		"title"   => __( 'Select (type one)', 'toothdr_textdomain' ),
+		"desc"    => __( 'A regular select form field', 'toothdr_textdomain' ),
+		"type"    => "select",
+		"std"    => "3",
+		"choices" => array( "1", "2", "3")
+	);
+	
+	$options[] = array(
+		"section" => "select_section",
+		"id"      => TOOTHDR_SHORTNAME . "_select2_input",
+		"title"   => __( 'Select (type two)', 'toothdr_textdomain' ),
+		"desc"    => __( 'A select field with a label for the option and a corresponding value.', 'toothdr_textdomain' ),
+		"type"    => "select2",
+		"std"    => "",
+		"choices" => array( __('Option 1','toothdr_textdomain') . "|opt1", __('Option 2','toothdr_textdomain') . "|opt2", __('Option 3','toothdr_textdomain') . "|opt3", __('Option 4','toothdr_textdomain') . "|opt4")
+	);
+	
+	// Checkbox Form Fields section
+	$options[] = array(
+		"section" => "checkbox_section",
+		"id"      => TOOTHDR_SHORTNAME . "_checkbox_input",
+		"title"   => __( 'Checkbox', 'toothdr_textdomain' ),
+		"desc"    => __( 'Some Description', 'toothdr_textdomain' ),
+		"type"    => "checkbox",
+		"std"     => 1 // 0 for off
+	);
+	
+	$options[] = array(
+		"section" => "checkbox_section",
+		"id"      => TOOTHDR_SHORTNAME . "_multicheckbox_inputs",
+		"title"   => __( 'Multi-Checkbox', 'toothdr_textdomain' ),
+		"desc"    => __( 'Some Description', 'toothdr_textdomain' ),
+		"type"    => "multi-checkbox",
+		"std"     => '',
+		"choices" => array( __('Checkbox 1','toothdr_textdomain') . "|chckbx1", __('Checkbox 2','toothdr_textdomain') . "|chckbx2", __('Checkbox 3','toothdr_textdomain') . "|chckbx3", __('Checkbox 4','toothdr_textdomain') . "|chckbx4")	
+	);*/
+	
+	return $options;	
+}
+
+/**
+ * Contextual Help
+ */
+function toothdr_options_page_contextual_help() {
+	
+	$text 	= "<h3>" . __('ToothDr Settings - Contextual Help','toothdr_textdomain') . "</h3>";
+	$text 	.= "<p>" . __('Contextual help goes here. You may want to use different html elements to format your text as you want.','toothdr_textdomain') . "</p>";
+	
+	// must return text! NOT echo
+	return $text;
+} ?>

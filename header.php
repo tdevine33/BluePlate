@@ -1,52 +1,42 @@
-<?php
-/**
- * The Header for our theme.
- *
- *
- * @package _BluePlate
- * @since _BluePlate 1.0
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!doctype html>
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
+	<meta charset="utf-8">
+	<title><?php wp_title(''); ?></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	<meta name="description" content="Description">
+	<meta name="keywords" content="Keywords">
+	<meta name="author" content="Terence Devine, info@terencedevine.com">
+	
+	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.ico">
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/apple-touch-icon.png">
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	
+	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-ck.js"></script>
+	
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
+	
+	<?php wp_head(); ?>
 
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', '_blueplate' ), max( $paged, $page ) );
-
-	?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-
-<?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
-<div id="main" class="wrapper">
-	<?php do_action( 'before' ); ?>
-	<header class="site-header" role="banner">
-		<nav role="navigation" class="main-navigation">
-			
-			<h1><a class="site-logo" href="<?php echo bloginfo('url'); ?>"><?php bloginfo ('name'); ?></a></h1>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>'' ) ); ?>
-			
-		</nav><!-- .main-navigation -->
-	</header><!-- #masthead .site-header -->
+<body <?php body_class($class); ?>>
+	<div class="wrap">
+		<header role="banner">
+			<hgroup>
+				<h1><a href="<?php echo get_option('home'); ?>">
+					<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" width="400" height="52">
+				</a></h1>
+				<h2><?php bloginfo('description'); ?></h2>
+			</hgroup>
+			<nav class="main-nav">
+				<?php wp_nav_menu( array(
+					'menu' => 'Main Navigation',
+					'container' => false
+				) ); ?>
+			</nav>
+		</header>
+	</div>

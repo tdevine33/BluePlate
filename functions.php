@@ -1,176 +1,61 @@
 <?php
-/**
- * _BluePlate functions and definitions
- *
- * @package _BluePlate
- * @since _BluePlate 1.0
- */
+	
+	// Add Menu Support
+	add_theme_support( 'menus' );
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since _BluePlate 1.0
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-
-if ( ! function_exists( '_blueplate_setup' ) ):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- *
- * @since _BluePlate 1.0
- */
-function _blueplate_setup() {
-
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require( get_template_directory() . '/inc/template-tags.php' );
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
-
-	/**
-	 * Custom Theme Options
-	 */
-	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
-
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on _BluePlate, use a find and replace
-	 * to change '_blueplate' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( '_blueplate', get_template_directory() . '/languages' );
-
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
-	add_theme_support( 'automatic-feed-links' );
-
-	/**
-	 * Enable support for Post Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_blueplate' ),
-	) );
-
-}
-endif; // _blueplate_setup
-add_action( 'after_setup_theme', '_blueplate_setup' );
-
-/**
- * Register widgetized area and update sidebar with default widgets
- *
- * @since _BluePlate 1.0
- */
-function _blueplate_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Sidebar', '_blueplate' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-}
-add_action( 'widgets_init', '_blueplate_widgets_init' );
-
-/**
- * Enqueue scripts and styles
- */
-
-// Load jQuery
-
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
-function my_jquery_enqueue() {
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", false, null);
-   wp_enqueue_script('jquery');
-}
-
-function _blueplate_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), false );
-
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ),"", true);
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	// Add Post Thumbnails Support
+	if ( function_exists( 'add_theme_support' ) ) {
+	  add_theme_support( 'post-thumbnails' );
 	}
 
-}
-add_action( 'wp_enqueue_scripts', '_blueplate_scripts' );
-
-
-//----------------------------------------------- Backend Customization 
-
-// Custom WordPress Login Logo
-
-function login_css() {
-    wp_enqueue_style( 'login_css', get_template_directory_uri() . '/css/login.css' );
-}
-
-add_action('login_head', 'login_css');
-
-function my_custom_login_url() {
-  return "http://www.seanmichael.me";
-}
-add_filter( 'login_headerurl', 'my_custom_login_url', 10, 4 );
-
-// Custom WordPress Footer
-
-function remove_footer_admin () {
-    echo '&copy; 2012 - <a href="http://www.seanmichael.me">Sean Michael Design</a>';
-}
-add_filter('admin_footer_text', 'remove_footer_admin');
-
-// Add a widget in WordPress Dashboard
-function wpc_dashboard_widget_function() {
+	// Add Custom Post Thumbnail Sizes
+	if ( function_exists( 'add_image_size' ) ) { 
+	  add_image_size( 'carousel_thumb', 156, 117, true);
+	  add_image_size( 'carousel_full', 800, 600);
+	}
 	
-	echo "<ul>
-	<li>Cell: 518-859-2981</li>
-	<li>Email: seankmichael@gmail.com</li>
-	<li>Website: <a href='http://www.wordpress.org'>Sean Michael Design</a></li>
-	<li>Online Support: <a href='http://wordpress.org/support/'>WordPress Documentation</a></li>
-	</ul>";
-}
-function wpc_add_dashboard_widgets() {
-	wp_add_dashboard_widget('wp_dashboard_widget', 'Support For Your Website', 'wpc_dashboard_widget_function');
-}
-add_action('wp_dashboard_setup', 'wpc_add_dashboard_widgets' );
+	// Add jQuery from Google CDN
+	if(!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+	  wp_deregister_script('jquery');
+	  wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", false, null);
+	  wp_enqueue_script('jquery');
+	}
 
-//Remove Widgets From Dashboard
-function wpc_dashboard_widgets() {
-	global $wp_meta_boxes;
-	// Today widget
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
-	// Incoming links
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-	// Plugins
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-	// Welcome
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
-}
-add_action('wp_dashboard_setup', 'wpc_dashboard_widgets');
+	// Add Footer SEO Text Widget
+	if(function_exists('register_sidebar'))
+	register_sidebar( array(
+		'name' => 'Footer - SEO Text',
+		'before_widget' => '<div class="seo">',
+		'after_widget' => '</div>',
+		'before_title' => '<h6>',
+		'after_title' => '</h6>',
+	));
+	
+	// Get Top Ancestor for Side Nav
+	if(!function_exists('get_post_top_ancestor_id')){
+	  function get_post_top_ancestor_id(){
+	    global $post;
 
-//Remove Version Update Notice
+	    if($post->post_parent){
+	      $ancestors = array_reverse(get_post_ancestors($post->ID));
+	      return $ancestors[0];
+	    }
 
-if ( !current_user_can( 'edit_users' ) ) {
-  add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
-  add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
-}
-?>
+	    return $post->ID;
+	  }
+	}
+
+	// Custom Theme Settings
+	if(is_admin()){ 
+	  require_once('lib/blueplate-theme-settings.php');
+	}
+
+	function blueplate_get_global_options(){
+	  $blueplate_option = array();
+	  $blueplate_option   = get_option('blueplate_options');
+	  
+	  return $blueplate_option;
+	}
+
+	$blueplate_option = blueplate_get_global_options();
