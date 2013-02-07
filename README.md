@@ -3,7 +3,7 @@ BluePlate
 
 A Starter WordPress Theme Forked by Terence Devine
 
-I created this Starter Theme to tackle some of the little issues that I seemed to be dealing with for every project, such as base SCSS style sheets, pagination, stripped markup, jQuery and script files linked and the array of WordPress files needed for a proper theme.
+I created this Starter Theme to tackle some of the little issues that I seemed to be dealing with for every project, such as base SCSS style sheets, linked scripts, pagination function, stripped down markup, and the array of WordPress files needed for a proper theme.
 
 ## Things to Know
 
@@ -27,7 +27,8 @@ I use Aria roles as my attribute selectors for the main sections of my site.  Yo
 
 The grid system used needs the following basic markup:
 
-`<div class="grid">
+```html
+<div class="grid">
 	<div class="grid-2-3">
 		<div class="col">
 			<h1>Main Content</h1>
@@ -38,7 +39,8 @@ The grid system used needs the following basic markup:
 			<h2>Sidebar Content</h2>
 		</div>
 	</div>
-</div>`
+</div>
+```
 
 For more info you can view (and fork!) my example on CodePen: <a href="http://codepen.io/tdevine33/pen/gaokG" target="_blank">Grid System</a>
 
