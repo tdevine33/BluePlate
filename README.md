@@ -85,6 +85,6 @@ from line 5 of scss/base.scss, as well as updating the clearfix on line 18 of sc
 		clear: both;
 	}
 
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    zoom: 1;
 }
 ```
