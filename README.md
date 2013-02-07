@@ -17,11 +17,11 @@ My CSS reset of choice is normalize.css (scss/normalize.scss) - if you are used 
 
 I use Aria roles as my attribute selectors for the main sections of my site.  You may notice them on, but not limited to:
 
-* header[role=banner] = <header role="banner"></header>
-* article[role=main] = <article role="main"></article>
-* section[role=main] = <section role="main"></section>
-* div[role=main] = <div role="main"></div>
-* footer[role=contentinfo] = <footer role="contentinfo"></footer>
+* header[role=banner]
+* article[role=main]
+* section[role=main]
+* div[role=main]
+* footer[role=contentinfo]
 
 ### Media Queries
 
