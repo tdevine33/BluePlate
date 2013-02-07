@@ -5,7 +5,7 @@ BluePlate
 
 I created this Starter Theme to tackle some of the little issues that I seemed to be dealing with for every project, such as base SCSS style sheets, linked scripts, pagination function, stripped down markup, and the array of WordPress files needed for a proper theme.
 
-## Things to Know
+## How to Use
 
 There are a few things you may want to know before starting with this theme, to cut down the number of head scratches along the way!
 
@@ -50,3 +50,26 @@ The Following do not take effect until 800 pixels (media queries)
 
 * Grid System
 * Hover States
+
+## Browser Support
+
+I created this theme with IE8+ support in mind - if you need additional support, I would suggest removing the line
+```scss
+@include box-sizing(border-box);
+```
+from line 5 of scss/base.scss, as well as updating the clearfix on line 18 of scss/bits.scss to
+```scss
+.clearfix{
+
+	&:before,
+	&:after{
+	    content: "";
+	    display: table;
+	} 
+	&:after {
+		clear: both;
+	}
+
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+```
