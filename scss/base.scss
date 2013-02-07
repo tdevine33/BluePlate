@@ -19,3 +19,34 @@ a{ }
 
 ::selection { }
 ::-moz-selection { }
+
+/******************************
+= Clearfix
+******************************/
+
+.clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/******************************
+= Grid Base
+******************************/
+
+$padding: 10px;
+.wrap{
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.grid{ padding-left: $padding; clear: both; }
+[class*=grid-]{
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+  
+  .col{ margin-right: $padding; }
+}
