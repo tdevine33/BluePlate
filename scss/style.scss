@@ -1,5 +1,5 @@
 /*!
-Theme Name: BluePlate Boiler Plate for WordPress mo fo
+Theme Name: BluePlate Boiler Plate for WordPress
 Theme URI: 
 Description: A Starter Theme for WordPress forked by Terence Devine
 Version: 1.0
@@ -10,11 +10,82 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 @import 'compass';
-@import 'bits';
-@import 'partials/normalize';
-@import 'grid';
+@import 'normalize';
+@import 'wordpress';
 
-@import 'partials/wordpress';
-@import 'media-queries';
-@import 'retina';
-@import 'partials/print';
+/******************************
+= Fonts
+******************************/
+
+$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+
+/******************************
+= Colors
+******************************/
+
+$red: red;
+$blue: blue;
+
+/******************************
+= Base
+******************************/
+
+::selection { background: $blue; color: #fff; }
+::-moz-selection { background: $blue; color: #fff; }
+body{
+	font: normal 62.5em/1.8em $sans;
+}
+h1,h2,h3,h4,h5,h6{
+	a{ }
+}
+p,li{ }
+a{ }
+.button{ }
+
+/******************************
+= Theme
+******************************/
+
+header[role=banner]{
+
+	h1{ }
+}
+nav[role=navigation]{ }
+[role=main]{ }
+aside.sidebar{ }
+footer[role=contentinfo]{ }
+
+/******************************
+= Homepage
+******************************/
+
+/******************************
+= Media Queries
+******************************/
+
+@media screen and ( min-width: 800px ) {
+
+	/******************************
+	= Grid
+	******************************/
+	
+	$padding: 10px;
+	.grid{ padding-left: $padding; }
+	[class*=grid-]{ float: left; 
+		.col{ margin-right: $padding; }
+	}
+	.grid-full{ width: 100%; }
+	.grid-1-4{ width: 25%; }
+	.grid-1-2{ width: 50%; }
+	.grid-3-4{ width: 75%; }
+	.grid-1-3{ width: 33.33%; }
+	.grid-2-3{ width: 66.67%; }
+	.grid-1-5{ width: 20%; }
+	.grid-2-5{ width: 40%; }
+	.grid-3-5{ width: 60%; }
+	.grid-4-5{ width: 80%; }
+
+}
+
+@import 'print';

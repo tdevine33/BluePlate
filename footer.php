@@ -2,7 +2,6 @@
 			<nav class="footer-nav">
 				<?php wp_nav_menu( array(
 					'menu' => 'Footer Navigation',
-					'menu_class' => 'wrap',
 					'container' => false
 				) ); ?>
 			</nav>
@@ -16,8 +15,8 @@
 	
 	</div>
 
-	<script defer src="js/scripts-ck.js"></script>
-	<script defer src="js/plugins-ck.js"></script>
+	<script defer src="<?php bloginfo('template_url'); ?>/js/scripts-ck.js"></script>
+	<script defer src="<?php bloginfo('template_url'); ?>/js/plugins-ck.js"></script>
 
 	<?php wp_footer(); ?>
 

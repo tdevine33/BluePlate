@@ -16,7 +16,7 @@
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/apple-touch-icon.png">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	
-	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-ck.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/lib/modernizr-ck.js"></script>
 	
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 	
