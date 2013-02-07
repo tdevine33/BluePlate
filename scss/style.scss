@@ -2,7 +2,7 @@
 Theme Name: BluePlate Boiler Plate for WordPress
 Theme URI: 
 Description: A Starter Theme for WordPress forked by Terence Devine
-Version: 1.0
+Version: 1.1
 Author: Terence Devine
 Author URI: http://terencedevine.com
 Tags: blank, starter, boilerplate
@@ -49,17 +49,36 @@ a{ }
 .button{ }
 
 /******************************
-= Theme
+= Layout
 ******************************/
 
+.clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 header[role=banner]{
 
-	h1{ }
+	h1{
+
+		a{ }
+	}
 }
-nav[role=navigation]{ }
+nav[role=navigation]{
+	ul{ @extend .clearfix; }
+	li{ float: left; }
+	a{ display: block; }
+}
 [role=main]{ }
 aside.sidebar{ }
 footer[role=contentinfo]{ }
+nav.footer-nav{
+	ul{ @extend .clearfix; }
+	li{ float: left; }
+	a{ display: block; }
+}
 
 /******************************
 = Homepage
