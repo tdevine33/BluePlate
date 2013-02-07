@@ -1,7 +1,7 @@
 BluePlate
 ==========
 
-*A Starter WordPress Theme Forked by Terence Devine*
+**A Starter WordPress Theme Forked by Terence Devine**
 
 I created this Starter Theme to tackle some of the little issues that I seemed to be dealing with for every project, such as base SCSS style sheets, linked scripts, pagination function, stripped down markup, and the array of WordPress files needed for a proper theme.
 
