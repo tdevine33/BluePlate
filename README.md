@@ -7,11 +7,24 @@ I created this Starter Theme to tackle some of the little issues that I seemed t
 
 ## How to Use
 
-There are a few things you may want to know before starting with this theme, to cut down the number of head scratches along the way!
+There are a few things you may want to know before starting with this theme to cut down the number of head scratches along the way - Enjoy!
+
+### SCSS
+
+I prefer to use the SCSS syntax of the Sass language instead of vanilla CSS, as it helps immensly with development.  A few of my favorite features are:
+
+* nested attributes
+* mixins (with compass)
+* variables
+* extending styles
+* @import
+* Many more!
+
+I would highly suggest <a href="http://incident57.com/codekit/" target="_blank">CodeKit</a> for all your pre-processor needs...  It is also good for javascript concatination, image compression, linting, autoreload and more!
 
 ### Normalize
 
-My CSS reset of choice is normalize.css (scss/normalize.scss) - if you are used to using the popular reset.css, it may throw you off as it doesn't strip ALL styles; but leaves the typical base styles (ie: ul's have additional margin / padding)
+My CSS reset of choice is <a href="http://necolas.github.com/normalize.css/" target="_blank">normalize.css</a> (scss/normalize.scss) - if you are used to using the popular reset.css, it may throw you off as it doesn't strip ALL styles - but instead leaves the typical base styles (ie: margin on h1, h2, ul, ol, etc.)
 
 ### Aria Roles
 
@@ -43,6 +56,8 @@ The grid system used needs the following basic markup:
 ```
 
 For more info you can view (and fork!) my example on CodePen: <a href="http://codepen.io/tdevine33/pen/gaokG" target="_blank">Grid System</a>
+
+Any layout for smaller devices (tablets) should be added separately in the stylesheet as to not break the layout.
 
 ### Media Queries
 
