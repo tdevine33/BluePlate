@@ -10,8 +10,7 @@
 
 	// Add Custom Post Thumbnail Sizes
 	if ( function_exists( 'add_image_size' ) ) { 
-	  add_image_size( 'carousel_thumb', 156, 117, true);
-	  add_image_size( 'carousel_full', 800, 600);
+	  add_image_size( 'gallery_image', 800, 600, true);
 	}
 	
 	// Add jQuery from Google CDN
