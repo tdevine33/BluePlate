@@ -1,12 +1,7 @@
 /******************************
 = Grid
 ******************************/
-
-$padding: 10px;
-.grid{ padding-left: $padding; }
-[class*=grid-]{ float: left; 
-	.col{ margin-right: $padding; }
-}
+  
 .grid-full{ width: 100%; }
 .grid-1-4{ width: 25%; }
 .grid-1-2{ width: 50%; }

@@ -23,6 +23,25 @@ I use Aria roles as my attribute selectors for the main sections of my site.  Yo
 * div[role=main]
 * footer[role=contentinfo]
 
+### Grid System
+
+The grid system used needs the following basic markup:
+
+`<div class="grid">
+	<div class="grid-2-3">
+		<div class="col">
+			<h1>Main Content</h1>
+		</div>
+	</div>
+	<div class="grid-1-3">
+		<div class="col">
+			<h2>Sidebar Content</h2>
+		</div>
+	</div>
+</div>`
+
+For more info you can view (and fork!) my example on CodePen: <a href="http://codepen.io/tdevine33/pen/gaokG" target="_blank">Grid System</a>
+
 ### Media Queries
 
 The Following do not take effect until 800 pixels (media queries)
