@@ -9,9 +9,18 @@ body{
 h1,h2,h3,h4,h5,h6{
 	a{ }
 }
-p,li{ }
+h1{ font-size: 2.6em; }
+h2{ font-size: 2.4em; }
+h3{ font-size: 2.2em; }
+h4{ font-size: 2.0em; }
+h5{ font-size: 1.8em; }
+h6{ font-size: 1.6em; }
+p,li{ font-size: 1.3em; }
+ul{ margin: 0; padding: 0; list-style: none; }
 a{ }
-.button{ }
+.button{
+	font-size: 1.3em;
+}
 
 /******************************
 = Text Highlight
@@ -46,7 +55,6 @@ $padding: 10px;
 [class*=grid-]{
   float: left;
   width: 100%;
-  margin-bottom: 10px;
-  
-  .col{ margin-right: $padding; }
+  padding-right: $padding;
+  margin-bottom: $padding;
 }
