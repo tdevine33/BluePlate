@@ -43,14 +43,10 @@ The grid system used needs the following basic markup:
 ```html
 <div class="grid">
 	<div class="grid-2-3">
-		<div class="col">
-			<h1>Main Content</h1>
-		</div>
+		<h1>Main Content</h1>
 	</div>
 	<div class="grid-1-3">
-		<div class="col">
-			<h2>Sidebar Content</h2>
-		</div>
+		<h2>Sidebar Content</h2>
 	</div>
 </div>
 ```
