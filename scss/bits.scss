@@ -1,0 +1,24 @@
+/******************************
+= Fonts
+******************************/
+
+$sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+
+/******************************
+= Colors
+******************************/
+
+$red: red;
+
+/******************************
+= Clearfix
+******************************/
+
+.clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

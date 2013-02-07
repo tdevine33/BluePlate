@@ -1,0 +1,21 @@
+/******************************
+= Base
+******************************/
+
+*{ @include box-sizing(border-box); }
+body{
+	font: normal 62.5em/1.8em $sans;
+}
+h1,h2,h3,h4,h5,h6{
+	a{ }
+}
+p,li{ }
+a{ }
+.button{ }
+
+/******************************
+= Text Highlight
+******************************/
+
+::selection { }
+::-moz-selection { }
