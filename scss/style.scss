@@ -15,14 +15,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ******************************/
 // Use Compass
 @import 'compass';
-// Normalize Errthing
-@import 'normalize';
-// WordPress Base
-@import 'wordpress';
 // Mixins & Variables
 @import 'bits';
 // Base Styles
 @import 'base';
+// WordPress Base
+@import 'wordpress';
 
 /******************************
 = Layout
@@ -56,7 +54,5 @@ nav.footer-nav{
 /******************************
 = Final Imports
 ******************************/
-// Make it Repsonsive
-@import 'media-queries';
 // For Tree Killers
 @import 'print';
