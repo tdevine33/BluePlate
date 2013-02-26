@@ -9,50 +9,31 @@ Tags: blank, starter, boilerplate
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-
 /******************************
 = Initial Imports
 ******************************/
-// Use Compass
 @import 'compass';
-// Mixins & Variables
-@import 'bits';
-// Base Styles
-@import 'base';
-// WordPress Base
-@import 'wordpress';
+@import 'base/base';
 
 /******************************
-= Layout
+= Content
 ******************************/
+@import 'content/header';
+@import 'content/content';
+@import 'content/footer';
 
-header[role=banner]{
-
-	h1{
-
-		a{ }
-	}
-}
-nav[role=navigation]{
-	ul{ @extend .clearfix; }
-	li{ float: left; }
-	a{ display: block; }
-}
-[role=main]{ }
-aside.sidebar{ }
-footer[role=contentinfo]{ }
-nav.footer-nav{
-	ul{ @extend .clearfix; }
-	li{ float: left; }
-	a{ display: block; }
-}
+/******************************
+= Pages
+******************************/
+@import 'pages/home';
+@import 'pages/blog';
 
 /******************************
 = Plugin Imports
 ******************************/
+@import 'plugins/rslides';
 
 /******************************
 = Final Imports
 ******************************/
-// For Tree Killers
-@import 'print';
+@import 'base/print';
