@@ -1,4 +1,33 @@
 <?php
+
+	// Short Codes
+	add_action( 'init', 'register_shortcodes');
+
+	function register_shortcodes(){
+	  add_shortcode('button', 'button_function');
+	}
+
+	function button_function( $atts, $content = null )
+	{
+	  extract(
+	    shortcode_atts(
+	      array( 'link' => '#', ),
+	      $atts
+	    )
+	  );
+	  return '<a href="'.$link.'" class="button">'.do_shortcode($content).'</a>';
+	}
+
+	function link_function( $atts, $content = null )
+	{
+	  extract(
+	    shortcode_atts(
+	      array( 'link' => '#', ),
+	      $atts
+	    )
+	  );
+	  return '<a href="'.$link.'" class="link">'.do_shortcode($content).'</a>';
+	}
 	
 	// Add Menu Support
 	add_theme_support( 'menus' );
